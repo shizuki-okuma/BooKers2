@@ -1,3 +1,4 @@
+<script src="https://kit.fontawesome.com/b8df303df0.js" crossorigin="anonymous"></script>
 <h1>User info</h1>
 
 <%= image_tag user.get_profile_image(100,100) %>
@@ -10,9 +11,14 @@
       <th>introduction<th>
       <th><%= user.introduction %></th>
       </tr>
+      
   </tbody>
 </table>
-<p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
+<% if @user == current_user %>
+ <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block " do %>
+<i class="fas fa-user-cog" ></i>
+<% end %>
+<% end %>
 
 <h1>New book</h1>
 <!-- form_with部分 -->

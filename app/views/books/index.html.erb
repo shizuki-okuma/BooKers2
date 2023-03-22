@@ -5,7 +5,7 @@
       <%= render 'list', user: @user %>
     </div>
     <div class="col-md-9">
-      
+      <h2>Books</h2>
 <table class="table table-striped">
 
 <thead>
@@ -16,7 +16,7 @@
     <tr>
       <td><%= image_tag book.user.get_profile_image(100,100) %></td>
       <td>
-      <span><%= link_to book_path(book.user.id) do%>
+      <span><%= link_to book_path(book.id) do%>
       <%= book.title%>
       <%end%>
     </span>
